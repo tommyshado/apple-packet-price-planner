@@ -21,8 +21,6 @@ const apple = appleApp();
 
 // event listeners
 calculateBtn.addEventListener('click', function() {
-    apple.getAppleBoxPrice(costOfPacketApples.value);
-    apple.getNumberForApples(numApplesInBox.value);
-    priceOfApple.innerText = apple.costOfApple();
+    priceOfApple.innerText = apple.costOfApple(costOfPacketApples.value, numApplesInBox.value);
     localStorage.setItem('costOfApple', priceOfApple.innerHTML);
 });
