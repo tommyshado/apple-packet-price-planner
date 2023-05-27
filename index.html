@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple-packet-price-planner</title>
+</head>
+<body>
+    <h1>Apple packet price planner app</h1>
+    <div class="sections">
+
+        <h2>Apple buying data</h2>
+        <div class="section">
+            <div>
+                <label for="cost-price">Apples box price:</label>
+                <input type="text" class="packetCostApples">
+            </div>
+
+            <div>
+                <label for="cost-price">Number of apples in the box:</label>
+                <input type="text" class="applesInBox">
+            </div>
+
+            <div class="button">
+                <button class="calculateBtn">calculate</button>
+            </div>
+
+        </div>
+
+        <h2>Apple price calculations</h2>
+        <div class="section">
+
+            <div>
+                <label for="cost-price">Number of packets:</label>
+                <div class="packetNum"></div>
+            </div>
+
+            <div>
+                <label for="cost-price">Cost price per apple:</label>
+                <div class="applePrice"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./applicationLogic/apple-packet-price-planner.js"></script>
+    <script src="./dom/apple-packet-price-planner.dom.js"></script>
+
+</body>
+</html>
