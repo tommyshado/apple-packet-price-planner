@@ -3,6 +3,7 @@ function appleApp() {
     // code for buying apples
     let appleBoxCost = 0;
     let appleNumber = 0;
+    let sizeOfPacket = 0;
 
     function getAppleBoxPrice(userInput) {
         appleBoxCost = Number(userInput)
@@ -22,13 +23,19 @@ function appleApp() {
     }
 
     function costOfPacket(packetSize) {
-        return (appleBoxCost / packetSize).toFixed(2);
+        sizeOfPacket = packetSize;
+        return (appleBoxCost / sizeOfPacket).toFixed(2);
+    }
+
+    function numberOfPackets() {
+        return appleNumber / sizeOfPacket;
     }
 
     return {
         getAppleBoxPrice,
         getNumberForApples,
         costOfApple,
-        costOfPacket
+        costOfPacket,
+        numberOfPackets
     }
 }
