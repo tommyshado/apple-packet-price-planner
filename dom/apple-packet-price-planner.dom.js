@@ -4,6 +4,7 @@ const numApplesInBox = document.querySelector('.applesInBox');
 const applePacketSize = document.querySelector('.applesPacket');
 
 // output elements
+const packetNumber = document.querySelector('.packetNum');
 const priceOfApple = document.querySelector('.applePrice');
 const priceOfPacket = document.querySelector('.applePacketPrice');
 
@@ -27,6 +28,14 @@ if (localStorage['costPerPacket']) {
     applePacketCost = priceOfPacket.innerText;
 }
 
+let numOfPacket = 0;
+
+if (localStorage['packetNumber']) {
+    packetNumber.innerText = localStorage.getItem('packetNumber');
+    packetNumber.classList.add('output');
+    numOfPacket = packetNumber.innerText;
+}
+
 // factory function instance
 const apple = appleApp();
 
@@ -45,6 +54,13 @@ calculateBtn.addEventListener('click', function() {
     priceOfPacket.innerText = apple.costOfPacket(applePacketSize.value);
     priceOfPacket.classList.add('output');
     localStorage.setItem('costPerPacket', priceOfPacket.innerText);
+
+    // packets number
+    apple.getNumberForApples(numApplesInBox.value);
+    apple.costOfPacket(applePacketSize.value);
+    packetNumber.innerText = apple.numberOfPackets();
+    packetNumber.classList.add('output');
+    localStorage.setItem('packetNumber', packetNumber.innerText);
 
     // setting input elements to an empty string
     costOfPacketApples.value = '';
