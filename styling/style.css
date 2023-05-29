@@ -1,0 +1,20 @@
+/* body */
+body {
+    font-size: 16px;
+    background-color: darkgray;
+}
+
+/* input text box */
+
+/* output box */
+.output {
+    background-color: white;
+    font-size: 1.5em;
+}
+
+/* responsive */
+@media (min-width: 768px) {
+    .sections {
+        display: flex;
+    }
+}
