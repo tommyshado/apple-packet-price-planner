@@ -13,6 +13,7 @@ let appleCost = 0;
 
 if (localStorage['costOfApple']) {
     priceOfApple.innerText = localStorage.getItem('costOfApple');
+    priceOfApple.classList.add('output');
     appleCost = priceOfApple.innerText;
 }
 
@@ -22,5 +23,8 @@ const apple = appleApp();
 // event listeners
 calculateBtn.addEventListener('click', function() {
     priceOfApple.innerText = apple.costOfApple(costOfPacketApples.value, numApplesInBox.value);
+    priceOfApple.classList.add('output');
+    costOfPacketApples.value = '';
+    numApplesInBox.value = '';
     localStorage.setItem('costOfApple', priceOfApple.innerHTML);
 });
