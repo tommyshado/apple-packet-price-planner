@@ -21,4 +21,11 @@ describe('The Apple packet price planner factory function', function() {
         apple.getAppleBoxPrice(50);
         assert.equal(apple.costOfPacket(10), 5);
     });
+
+    it('should be bale to calculate the number of packets', function() {
+        const apple = appleApp();
+        apple.getNumberForApples(100);
+        apple.costOfPacket(50);
+        assert.equal(apple.numberOfPackets(), 2);
+    });
 })
